@@ -342,19 +342,19 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: "center",
+        paddingHorizontal: 24
     },
     label: {
         marginBottom: 8
     },
     item: {
         fontSize: 16,
-        width: '90%',
+        width: '100%',
         paddingVertical: 16,
         paddingHorizontal: 24,
         marginVertical: 8,
         flexDirection: "column-reverse",
         justifyContent: "space-between",
-        alignItems: "center",
         backgroundColor: GlobalStyles.colors.bgPrimary,
         borderRadius: 16
     }
