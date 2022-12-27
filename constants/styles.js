@@ -59,46 +59,30 @@ export const GlobalStyles = {
         fontFamily: 'nunito-bold-italic',
         fontWeight: "700"
     },
-    hugeTitle: {
-        fontSize: 60
+    fontSize: {
+        hugeTitle: 60,
+        largeTitle: 36,
+        title1: 24,
+        title2: 22,
+        title3: 20,
+        headline: 17,
+        callout: 16,
+        subhead: 14,
+        footnote: 12,
+        button: 16,
+        label1: 10,
+        label2: 20,
+        caption1: 12,
+        caption2: 10,
     },
-    largeTitle: {
-        fontSize: 36
-    },
-    title1: {
-        fontSize: 24
-    },
-    title2: {
-        fontSize: 22
-    },
-    title3: {
-        fontSize: 20
-    },
-    headline: {
-        fontSize: 17
-    },
-    callout: {
-        fontSize: 16
-    },
-    subhead: {
-        fontSize: 14
-    },
-    footnote: {
-        fontSize: 12
-    },
-    button: {
-        fontSize: 16
-    },
-    label1: {
-        fontSize: 10
-    },
-    label2: {
-        fontSize: 20
-    },
-    caption1: {
-        fontSize: 12
-    },
-    caption2: {
-        fontSize: 10
+    spacing: {
+        xs: 8,
+        s: 16,
+        m: 24,
+        l: 32,
+        xl: 40,
+        xxl: 48,
+        xxxl: 56,
+        xxxxl: 64
     }
 };
