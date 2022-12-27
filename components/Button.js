@@ -15,7 +15,8 @@ function Button({
     size='medium',
     isCentered=true,
     isDisabled,
-    style
+    style,
+    textStyle,
 }) {
     const btnBorderRadius = useMemo(() => {
         switch (shape) {
@@ -59,6 +60,10 @@ function Button({
                     borderWidth: 1,
                     borderStyle: 'solid'
                 };
+            case 'transparent':
+                return {
+                    backgroundColor: "transparent"
+                }
         }
     }, [isDisabled, type]);
 
@@ -106,10 +111,9 @@ function Button({
             flexDirection: "row",
             justifyContent: btnTextAlign,
             alignItems: "center",
-            width: '100%',
-            minWidth: 200
+            ...style
         };
-    }, [btnBorderRadius, btnBorderColor, btnSize, btnTextAlign]);
+    }, [btnBorderRadius, btnBorderColor, btnSize, btnTextAlign, style]);
     return (
         <View style={style}>
             <Pressable disabled={isDisabled} onPress={onPress} style={({pressed}) => [pressed && styles.pressed]}>
@@ -120,7 +124,8 @@ function Button({
                             styles.buttonText,
                             type === 'secondary' && styles.secondaryText,
                             isCentered && styles.centeredText,
-                            isDisabled && styles.disabledText
+                            isDisabled && styles.disabledText,
+                            textStyle
                         ]}
                     >{children}</Text>
                     {iconRight && <Ionicons name={iconRight} size={20} color={iconColor} />}
