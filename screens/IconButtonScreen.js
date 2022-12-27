@@ -5,7 +5,7 @@ import {ScrollView, StyleSheet, Text, View} from "react-native";
 function IconButtonScreen() {
     return (
         <ScrollView
-            contentContainerStyle={{paddingVertical: 16}}
+            contentContainerStyle={{paddingVertical: GlobalStyles.spacing.s}}
             centerContent={true}
         >
             <View style={styles.container}>
@@ -103,14 +103,14 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     label: {
-        marginBottom: 8
+        marginBottom: GlobalStyles.spacing.xs
     },
     iconItem: {
-        fontSize: 16,
+        fontSize: GlobalStyles.fontSize.callout,
         width: '80%',
-        paddingVertical: 16,
-        paddingHorizontal: 32,
-        marginVertical: 8,
+        paddingVertical: GlobalStyles.spacing.s,
+        paddingHorizontal: GlobalStyles.spacing.l,
+        marginVertical: GlobalStyles.spacing.xs,
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
