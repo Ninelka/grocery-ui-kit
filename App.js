@@ -3,6 +3,7 @@ import {createDrawerNavigator} from "@react-navigation/drawer";
 import {NavigationContainer} from "@react-navigation/native";
 import ButtonScreen from "./screens/ButtonScreen";
 import IconButtonScreen from "./screens/IconButtonScreen";
+import BadgeScreen from "./screens/BadgeScreen";
 
 
 const Drawer = createDrawerNavigator();
@@ -18,6 +19,10 @@ function MyDrawer() {
             name="Icon button"
             component={IconButtonScreen}
         />
+          <Drawer.Screen
+              name="Badge"
+              component={BadgeScreen}
+          />
       </Drawer.Navigator>
   );
 }
