@@ -9,6 +9,7 @@ import {useFonts} from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import {useCallback} from "react";
 import TypographyScreen from "./screens/TypographyScreen";
+import ToggleScreen from "./screens/ToggleScreen";
 
 
 const Drawer = createDrawerNavigator();
@@ -36,6 +37,10 @@ function MyDrawer() {
           <Drawer.Screen
               name="Input"
               component={InputScreen}
+          />
+          <Drawer.Screen
+              name="Toggle"
+              component={ToggleScreen}
           />
       </Drawer.Navigator>
   );
