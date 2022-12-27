@@ -4,6 +4,7 @@ import {NavigationContainer} from "@react-navigation/native";
 import ButtonScreen from "./screens/ButtonScreen";
 import IconButtonScreen from "./screens/IconButtonScreen";
 import BadgeScreen from "./screens/BadgeScreen";
+import InputScreen from "./screens/InputScreen";
 
 
 const Drawer = createDrawerNavigator();
@@ -22,6 +23,10 @@ function MyDrawer() {
           <Drawer.Screen
               name="Badge"
               component={BadgeScreen}
+          />
+          <Drawer.Screen
+              name="Input"
+              component={InputScreen}
           />
       </Drawer.Navigator>
   );
