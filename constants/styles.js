@@ -35,4 +35,70 @@ export const GlobalStyles = {
         disable: '#979592',
         red: '#ff3b30'
     },
+    fontRegular: {
+        fontFamily: 'nunito-regular',
+        fontWeight: "400"
+    },
+    fontSemiBold: {
+        fontFamily: 'nunito-semibold',
+        fontWeight: "600"
+    },
+    fontBold: {
+        fontFamily: 'nunito-bold',
+        fontWeight: "700"
+    },
+    fontRegularItalic: {
+        fontFamily: 'nunito-italic',
+        fontWeight: "400"
+    },
+    fontSemiBoldItalic: {
+        fontFamily: 'nunito-semibold-italic',
+        fontWeight: "600"
+    },
+    fontBoldItalic: {
+        fontFamily: 'nunito-bold-italic',
+        fontWeight: "700"
+    },
+    hugeTitle: {
+        fontSize: 60
+    },
+    largeTitle: {
+        fontSize: 36
+    },
+    title1: {
+        fontSize: 24
+    },
+    title2: {
+        fontSize: 22
+    },
+    title3: {
+        fontSize: 20
+    },
+    headline: {
+        fontSize: 17
+    },
+    callout: {
+        fontSize: 16
+    },
+    subhead: {
+        fontSize: 14
+    },
+    footnote: {
+        fontSize: 12
+    },
+    button: {
+        fontSize: 16
+    },
+    label1: {
+        fontSize: 10
+    },
+    label2: {
+        fontSize: 20
+    },
+    caption1: {
+        fontSize: 12
+    },
+    caption2: {
+        fontSize: 10
+    }
 };
