@@ -8,6 +8,7 @@ import InputScreen from "./screens/InputScreen";
 import {useFonts} from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import {useCallback} from "react";
+import TypographyScreen from "./screens/TypographyScreen";
 
 
 const Drawer = createDrawerNavigator();
@@ -16,6 +17,10 @@ SplashScreen.preventAutoHideAsync();
 function MyDrawer() {
   return (
       <Drawer.Navigator>
+        <Drawer.Screen
+            name="Typography"
+            component={TypographyScreen}
+        />
         <Drawer.Screen
             name="Buttons"
             component={ButtonScreen}
