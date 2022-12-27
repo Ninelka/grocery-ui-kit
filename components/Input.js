@@ -72,7 +72,7 @@ export default Input;
 const styles = StyleSheet.create({
     inputContainer: {
         marginHorizontal: 4,
-        marginVertical: 8,
+        marginVertical: GlobalStyles.spacing.xs,
     },
     inputWrapper: {
         flexDirection: "row",
@@ -83,18 +83,20 @@ const styles = StyleSheet.create({
         borderColor: GlobalStyles.colors.separatorNotOpaque,
         borderRadius: 8,
         backgroundColor: "transparent",
-        paddingHorizontal: 16,
+        paddingHorizontal: GlobalStyles.spacing.s,
     },
     label: {
-        fontSize: 17,
+        ...GlobalStyles.fontRegular,
+        fontSize: GlobalStyles.fontSize.headline,
         color: GlobalStyles.colors.labelsSecondary,
-        marginBottom: 8
+        marginBottom: GlobalStyles.spacing.xs
     },
     input: {
+        ...GlobalStyles.fontRegular,
         flex: 1,
         color: GlobalStyles.colors.labelsPrimary,
-        fontSize: 18,
-        paddingVertical: 16
+        fontSize: GlobalStyles.fontSize.headline,
+        paddingVertical: GlobalStyles.spacing.s
     },
     invalidLabel: {
         color: GlobalStyles.colors.primaryOrange

@@ -8,7 +8,7 @@ function InputScreen() {
 
     return (
         <ScrollView
-            contentContainerStyle={{paddingVertical: 16}}
+            contentContainerStyle={{paddingVertical: GlobalStyles.spacing.s}}
         >
             <View style={styles.container}>
                 <View style={styles.item}>
@@ -58,16 +58,16 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: "center",
-        paddingVertical: 16
+        paddingVertical: GlobalStyles.spacing.s
     },
     row: {
-        marginBottom: 8
+        marginBottom: GlobalStyles.spacing.xs
     },
     item: {
-        fontSize: 16,
+        fontSize: GlobalStyles.fontSize.callout,
         width: '90%',
-        paddingVertical: 16,
-        paddingHorizontal: 24,
+        paddingVertical: GlobalStyles.spacing.s,
+        paddingHorizontal: GlobalStyles.spacing.m,
         backgroundColor: GlobalStyles.colors.bgPrimary,
         borderRadius: 16
     }
