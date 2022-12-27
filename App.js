@@ -5,9 +5,13 @@ import ButtonScreen from "./screens/ButtonScreen";
 import IconButtonScreen from "./screens/IconButtonScreen";
 import BadgeScreen from "./screens/BadgeScreen";
 import InputScreen from "./screens/InputScreen";
+import {useFonts} from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
+import {useCallback} from "react";
 
 
 const Drawer = createDrawerNavigator();
+SplashScreen.preventAutoHideAsync();
 
 function MyDrawer() {
   return (
@@ -33,10 +37,29 @@ function MyDrawer() {
 }
 
 export default function App() {
+    const [fontsLoaded] = useFonts({
+        'nunito-bold': require('./assets/fonts/Nunito-Bold.ttf'),
+        'nunito-bold-italic': require('./assets/fonts/Nunito-BoldItalic.ttf'),
+        'nunito-semibold': require('./assets/fonts/Nunito-SemiBold.ttf'),
+        'nunito-semibold-italic': require('./assets/fonts/Nunito-SemiBoldItalic.ttf'),
+        'nunito-regular': require('./assets/fonts/Nunito-Regular.ttf'),
+        'nunito-italic': require('./assets/fonts/Nunito-Italic.ttf'),
+    });
+
+    const onLayoutRootView = useCallback(async () => {
+        if (fontsLoaded) {
+            await SplashScreen.hideAsync();
+        }
+    }, [fontsLoaded]);
+
+    if (!fontsLoaded) {
+        return null;
+    }
+    
   return (
       <>
           <StatusBar style="auto" />
-          <NavigationContainer>
+          <NavigationContainer onReady={onLayoutRootView}>
               <MyDrawer/>
           </NavigationContainer>
       </>
