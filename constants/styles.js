@@ -32,6 +32,7 @@ export const GlobalStyles = {
         labelsSecondary: '#8a8a8e',
         labelsTertiary: '#c5c5c7',
         labelsQuarternary: '#f8f8f8',
-        disable: '#979592'
+        disable: '#979592',
+        red: '#ff3b30'
     },
 };
