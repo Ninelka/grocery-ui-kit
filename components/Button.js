@@ -71,7 +71,7 @@ function Button({
         switch (size) {
             case 'large':
                 return {
-                    paddingVertical: 16
+                    paddingVertical: GlobalStyles.spacing.s
                 }
             case 'medium':
                 return {
@@ -107,7 +107,8 @@ function Button({
             ...btnBorderRadius,
             ...btnBorderColor,
             ...btnSize,
-            paddingHorizontal: 16,
+            ...GlobalStyles.fontRegular,
+            paddingHorizontal: GlobalStyles.spacing.s,
             flexDirection: "row",
             justifyContent: btnTextAlign,
             alignItems: "center",
@@ -143,7 +144,7 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         color: GlobalStyles.colors.white,
-        fontSize: 17,
+        fontSize: GlobalStyles.fontSize.button,
     },
     secondaryText: {
         color: GlobalStyles.colors.primaryGreen
@@ -152,7 +153,7 @@ const styles = StyleSheet.create({
         color: GlobalStyles.colors.disable,
     },
     centeredText: {
-        marginHorizontal: 16,
+        marginHorizontal: GlobalStyles.spacing.s,
     },
     pressed: {
         opacity: 0.75,
