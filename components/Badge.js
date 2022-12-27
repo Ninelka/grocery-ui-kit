@@ -16,13 +16,13 @@ const styles = StyleSheet.create({
         backgroundColor: GlobalStyles.colors.red,
         borderRadius: 100,
         paddingVertical: 2,
-        paddingHorizontal: 8
+        paddingHorizontal: GlobalStyles.spacing.xs
     },
     text: {
-        fontSize: 16,
+        fontSize: GlobalStyles.fontSize.callout,
         color: GlobalStyles.colors.white
     },
     smallText: {
-        fontSize: 12
+        fontSize: GlobalStyles.fontSize.caption1
     }
 })
