@@ -33,7 +33,8 @@ export const GlobalStyles = {
         labelsTertiary: '#c5c5c7',
         labelsQuarternary: '#f8f8f8',
         disable: '#979592',
-        red: '#ff3b30'
+        red: '#ff3b30',
+        green: '#32d74b'
     },
     fontRegular: {
         fontFamily: 'nunito-regular',
