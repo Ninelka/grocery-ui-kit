@@ -10,10 +10,46 @@ import * as SplashScreen from "expo-splash-screen";
 import {useCallback} from "react";
 import TypographyScreen from "./screens/TypographyScreen";
 import ToggleScreen from "./screens/ToggleScreen";
+import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
+import {Ionicons} from "@expo/vector-icons";
+import {GlobalStyles} from "./constants/styles";
+import BottomTabsScreen from "./screens/BottomTabsScreen";
 
 
 const Drawer = createDrawerNavigator();
+const BottomTabs = createBottomTabNavigator();
 SplashScreen.preventAutoHideAsync();
+
+function MyTabs() {
+    return (
+        <BottomTabs.Navigator>
+            <BottomTabs.Screen
+                name="Label-1"
+                component={BottomTabsScreen}
+                options={{
+                    tabBarIcon: ({size, color}) => <Ionicons name="home" size={size} color={color} />,
+                    tabBarActiveTintColor: GlobalStyles.colors.primaryGreen
+                }}
+            />
+            <BottomTabs.Screen
+                name="Label-2"
+                component={BottomTabsScreen}
+                options={{
+                    tabBarIcon: ({size, color}) => <Ionicons name="home" size={size} color={color} />,
+                    tabBarActiveTintColor: GlobalStyles.colors.primaryGreen
+                }}
+            />
+            <BottomTabs.Screen
+                name="Label-3"
+                component={BottomTabsScreen}
+                options={{
+                    tabBarIcon: ({size, color}) => <Ionicons name="home" size={size} color={color} />,
+                    tabBarActiveTintColor: GlobalStyles.colors.primaryGreen
+                }}
+            />
+        </BottomTabs.Navigator>
+    )
+}
 
 function MyDrawer() {
   return (
@@ -41,6 +77,11 @@ function MyDrawer() {
           <Drawer.Screen
               name="Toggle"
               component={ToggleScreen}
+          />
+          <Drawer.Screen
+              name="Tab bar"
+              component={MyTabs}
+              options={{ headerShown: false}}
           />
       </Drawer.Navigator>
   );
