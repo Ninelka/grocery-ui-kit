@@ -16,6 +16,7 @@ import {GlobalStyles} from "./constants/styles";
 import BottomTabsScreen from "./screens/BottomTabsScreen";
 import SegmentedControlScreen from "./screens/SegmentedControlScreen";
 import SearchScreen from "./screens/SearchScreen";
+import SliderScreen from "./screens/SliderScreen";
 
 
 const Drawer = createDrawerNavigator();
@@ -92,6 +93,10 @@ function MyDrawer() {
               name="Tab bar"
               component={MyTabs}
               options={{ headerShown: false}}
+          />
+          <Drawer.Screen
+              name="Slider"
+              component={SliderScreen}
           />
       </Drawer.Navigator>
   );
