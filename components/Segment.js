@@ -45,10 +45,13 @@ const styles = StyleSheet.create({
         borderColor: GlobalStyles.colors.grey5,
         borderWidth: 0.5,
         borderStyle: "solid",
+        // shadow for android
+        elevation: 1,
     },
     transparentItemActive: {
         borderWidth: 1,
         borderColor: GlobalStyles.colors.primaryGreen,
+        elevation: 0
     },
     text: {
         ...GlobalStyles.fontSemiBold,
