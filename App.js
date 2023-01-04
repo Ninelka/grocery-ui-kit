@@ -15,6 +15,7 @@ import {Ionicons} from "@expo/vector-icons";
 import {GlobalStyles} from "./constants/styles";
 import BottomTabsScreen from "./screens/BottomTabsScreen";
 import SegmentedControlScreen from "./screens/SegmentedControlScreen";
+import SearchScreen from "./screens/SearchScreen";
 
 
 const Drawer = createDrawerNavigator();
@@ -82,6 +83,10 @@ function MyDrawer() {
           <Drawer.Screen
               name="Segmented Control"
               component={SegmentedControlScreen}
+          />
+          <Drawer.Screen
+              name="Search"
+              component={SearchScreen}
           />
           <Drawer.Screen
               name="Tab bar"
