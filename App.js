@@ -17,6 +17,7 @@ import BottomTabsScreen from "./screens/BottomTabsScreen";
 import SegmentedControlScreen from "./screens/SegmentedControlScreen";
 import SearchScreen from "./screens/SearchScreen";
 import SliderScreen from "./screens/SliderScreen";
+import CalendarScreen from "./screens/CalendarScreen";
 
 
 const Drawer = createDrawerNavigator();
@@ -97,6 +98,10 @@ function MyDrawer() {
           <Drawer.Screen
               name="Slider"
               component={SliderScreen}
+          />
+          <Drawer.Screen
+              name="Calendar"
+              component={CalendarScreen}
           />
       </Drawer.Navigator>
   );
