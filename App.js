@@ -18,6 +18,7 @@ import SegmentedControlScreen from "./screens/SegmentedControlScreen";
 import SearchScreen from "./screens/SearchScreen";
 import SliderScreen from "./screens/SliderScreen";
 import CalendarScreen from "./screens/CalendarScreen";
+import IntroSliderScreen from "./screens/IntroSliderScreen";
 
 
 const Drawer = createDrawerNavigator();
@@ -58,6 +59,10 @@ function MyTabs() {
 function MyDrawer() {
   return (
       <Drawer.Navigator>
+        <Drawer.Screen
+            name="Intro Slider"
+            component={IntroSliderScreen}
+        />
         <Drawer.Screen
             name="Typography"
             component={TypographyScreen}
