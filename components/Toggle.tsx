@@ -1,7 +1,13 @@
 import {View, Switch, Text, StyleSheet} from "react-native";
 import {GlobalStyles} from "../constants/styles";
 
-function Toggle({label, value, disabled, onValueChange}) {
+interface IToggle {
+    label: string,
+    value: boolean,
+    onValueChange: () => void,
+    disabled?: boolean,
+}
+function Toggle({label, value, disabled, onValueChange}: IToggle) {
     return (
         <View style={[styles.container, disabled && styles.disabled]}>
             <Text style={styles.label} onPress={!disabled ? onValueChange : null}>{label}</Text>
@@ -26,7 +32,8 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     label: {
-        ...GlobalStyles.fontRegular,
+        // TODO: fix style type and uncomment it
+        // ...GlobalStyles.fontRegular,
         flex: 1,
         fontSize: GlobalStyles.fontSize.headline
     },

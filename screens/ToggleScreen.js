@@ -52,7 +52,6 @@ const styles = StyleSheet.create({
         paddingHorizontal: GlobalStyles.spacing.m
     },
     item: {
-        fontSize: GlobalStyles.fontSize.callout,
         width: '90%',
         paddingVertical: GlobalStyles.spacing.s,
         paddingHorizontal: GlobalStyles.spacing.m,
