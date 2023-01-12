@@ -3,7 +3,17 @@ import {Ionicons} from "@expo/vector-icons";
 import {GlobalStyles} from "../constants/styles";
 import {useMemo} from "react";
 
-const defaultButtonStyle = {};
+interface IIconButton {
+    icon: any,
+    color?: string,
+    bgColor?: string,
+    type?: 'rounded' | 'ellipse',
+    size?: 'large' | 'medium' | 'small',
+    onPress?: () => void
+}
+
+// TODO: fix this any type
+const defaultButtonStyle: any = {};
 
 function IconButton({
                         icon,
@@ -12,7 +22,7 @@ function IconButton({
                         type='rounded',
                         size='medium',
                         onPress
-}) {
+}: IIconButton) {
     const buttonSize = useMemo(() => {
         switch (size) {
             case 'large':
