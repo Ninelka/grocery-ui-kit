@@ -111,11 +111,11 @@ function MyDrawer() {
               component={CalendarScreen}
           />
           <Drawer.Screen
-              name="Product Card"
+              name="Product Cards"
               component={ProductCardScreen}
           />
           <Drawer.Screen
-              name="Floating Card"
+              name="Floating Cards"
               component={FloatingCardScreen}
           />
       </Drawer.Navigator>
