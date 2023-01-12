@@ -19,6 +19,8 @@ import SearchScreen from "./screens/SearchScreen";
 import SliderScreen from "./screens/SliderScreen";
 import CalendarScreen from "./screens/CalendarScreen";
 import IntroSliderScreen from "./screens/IntroSliderScreen";
+import ProductCardScreen from "./screens/ProductCardScreen";
+import FloatingCardScreen from "./screens/FloatingCardScreen";
 
 
 const Drawer = createDrawerNavigator();
@@ -107,6 +109,14 @@ function MyDrawer() {
           <Drawer.Screen
               name="Calendar"
               component={CalendarScreen}
+          />
+          <Drawer.Screen
+              name="Product Card"
+              component={ProductCardScreen}
+          />
+          <Drawer.Screen
+              name="Floating Card"
+              component={FloatingCardScreen}
           />
       </Drawer.Navigator>
   );
