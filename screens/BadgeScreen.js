@@ -42,7 +42,6 @@ const styles = StyleSheet.create({
         marginBottom: 8
     },
     item: {
-        fontSize: 16,
         width: '90%',
         paddingVertical: 16,
         paddingHorizontal: 24,

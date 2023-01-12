@@ -1,7 +1,14 @@
-import {StyleSheet, Text, View} from "react-native";
+import {StyleSheet, Text, View, ViewStyle} from "react-native";
 import {GlobalStyles} from "../constants/styles";
 
-function Badge({counter, size, style}) {
+interface IBadge {
+    counter: number,
+    size?: string,
+    style?: ViewStyle
+    // style?: any
+}
+
+function Badge({counter, size, style}: IBadge) {
     return (
         <View style={[styles.container, style]}>
             <Text style={[styles.text, size === 'small' && styles.smallText]}>{counter}</Text>
