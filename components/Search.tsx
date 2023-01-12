@@ -1,8 +1,19 @@
-import {StyleSheet, TextInput, View} from "react-native";
+import {StyleSheet, TextInput, View, ViewStyle} from "react-native";
 import {GlobalStyles} from "../constants/styles";
 import IconButton from "./IconButton";
+import React from "react";
 
-function Search({value, placeholder, style, iconLeft, iconRight, iconRightPress, outerBtn}) {
+interface ISearch {
+    value?: string,
+    placeholder?: string,
+    style?: ViewStyle,
+    iconLeft?: React.ReactElement
+    iconRight?: React.ReactElement,
+    iconRightPress?: () => void,
+    outerBtn?: React.ReactElement
+}
+
+function Search({value, placeholder, style, iconLeft, iconRight, iconRightPress, outerBtn}: ISearch) {
     return (
         <View style={[styles.inputContainer, style]}>
             <View style={[
@@ -61,7 +72,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: GlobalStyles.spacing.xs,
     },
     input: {
-        ...GlobalStyles.fontRegular,
+        // TODO: fix style type and uncomment it
+        // ...GlobalStyles.fontRegular,
         flex: 1,
         color: GlobalStyles.colors.labelsPrimary,
         fontSize: GlobalStyles.fontSize.headline,
