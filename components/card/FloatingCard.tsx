@@ -1,7 +1,13 @@
-import {StyleSheet, View} from "react-native";
+import {StyleSheet, View, ViewStyle} from "react-native";
 import {GlobalStyles} from "../../constants/styles";
+import React from "react";
 
-function FloatingCard({children, type, style}) {
+interface IFloatingCard {
+    children: React.ReactNode,
+    type?: string,
+    style?: ViewStyle
+}
+function FloatingCard({children, type, style}: IFloatingCard) {
     const cardRadius = () => type === 'ellipse' ? GlobalStyles.spacing.xxl : GlobalStyles.spacing.xs;
 
     return (
