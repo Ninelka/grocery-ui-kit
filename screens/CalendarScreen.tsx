@@ -1,10 +1,10 @@
 import {StyleSheet, View} from "react-native";
-import {Calendar} from 'react-native-calendars';
+import {Calendar, CalendarProps} from 'react-native-calendars';
 import {FontAwesome} from "@expo/vector-icons";
 import {useState} from "react";
 import {COLORS, GlobalStyles} from "../constants";
 
-const customTheme = {
+const customTheme: CalendarProps['theme'] | Record<string, unknown>  = {
     selectedDayBackgroundColor: COLORS.secondaryGreen,
     selectedDayTextColor: COLORS.primaryGreen,
     todayTextColor: COLORS.primaryGreen,
