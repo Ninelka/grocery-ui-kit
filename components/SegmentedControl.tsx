@@ -2,7 +2,14 @@ import {FlatList, StyleSheet, View} from "react-native";
 import Segment from "./Segment";
 import {COLORS} from "../constants";
 
-function SegmentedControl({segments, activeItem, onPress, transparent}) {
+interface ISegmentedControl {
+    segments: string[],
+    activeItem: string,
+    onPress,
+    transparent?: boolean
+}
+
+function SegmentedControl({segments, activeItem, onPress, transparent}: ISegmentedControl) {
     const separator = () => {
         return (
             <View style={[
