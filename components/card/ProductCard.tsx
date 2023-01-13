@@ -1,11 +1,31 @@
-import {Image, Pressable, StyleSheet, Text, View} from "react-native";
+import {Image, ImageSourcePropType, Pressable, StyleSheet, Text, View, ViewStyle} from "react-native";
 import {useMemo} from "react";
 import {COLORS, FONT_FAMILY, GlobalStyles} from "../../constants";
 import Badge from "../Badge";
 import IconButton from "../IconButton";
 
-function ProductCard({onPress, type = 'vertical', title, unit, amount, amountWithDiscount, image, discount}) {
-    const cardStyles = useMemo(() => {
+interface IProductCard {
+    title: string,
+    unit?: string,
+    amount?: number,
+    amountWithDiscount?: number,
+    image?: ImageSourcePropType,
+    discount?: number,
+    onPress?: () => void,
+    type?: 'vertical' | 'horizontal' | 'compact'
+}
+
+function ProductCard({
+                         onPress,
+                         type = 'vertical',
+                         title,
+                         unit,
+                         amount,
+                         amountWithDiscount,
+                         image,
+                         discount
+}: IProductCard) {
+    const cardStyles: ViewStyle = useMemo(() => {
         switch (type) {
             case 'compact':
                 return {
