@@ -1,7 +1,7 @@
 import {ScrollView, StyleSheet, View} from "react-native";
-import {GlobalStyles} from "../constants/styles";
 import Input from "../components/Input";
 import {useTogglePasswordVisibility} from "../hooks/useTogglePasswordVisibility";
+import {COLORS, GlobalStyles} from "../constants";
 
 function InputScreen() {
     const { passwordVisibility, rightIcon, handlePasswordVisibility } = useTogglePasswordVisibility();
@@ -64,11 +64,10 @@ const styles = StyleSheet.create({
         marginBottom: GlobalStyles.spacing.xs
     },
     item: {
-        fontSize: GlobalStyles.fontSize.callout,
         width: '90%',
         paddingVertical: GlobalStyles.spacing.s,
         paddingHorizontal: GlobalStyles.spacing.m,
-        backgroundColor: GlobalStyles.colors.bgPrimary,
+        backgroundColor: COLORS.bgPrimary,
         borderRadius: 16
     }
 })

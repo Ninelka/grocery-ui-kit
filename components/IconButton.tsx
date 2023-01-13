@@ -1,7 +1,7 @@
-import {Pressable, StyleSheet, View} from "react-native";
+import {Pressable, StyleSheet, View, ViewStyle} from "react-native";
 import {Ionicons} from "@expo/vector-icons";
-import {GlobalStyles} from "../constants/styles";
 import {useMemo} from "react";
+import {COLORS} from "../constants";
 
 interface IIconButton {
     icon: any,
@@ -12,13 +12,15 @@ interface IIconButton {
     onPress?: () => void
 }
 
-// TODO: fix this any type
-const defaultButtonStyle: any = {};
+const defaultButtonStyle: ViewStyle = {
+    justifyContent: "center",
+    alignItems: "center",
+};
 
 function IconButton({
                         icon,
                         color,
-                        bgColor=GlobalStyles.colors.primaryGreen,
+                        bgColor=COLORS.primaryGreen,
                         type='rounded',
                         size='medium',
                         onPress
@@ -56,8 +58,6 @@ function IconButton({
 
         return {
             ...defaultButtonStyle,
-            justifyContent: "center",
-            alignItems: "center",
             backgroundColor: bgColor,
             width: buttonSize,
             height: buttonSize

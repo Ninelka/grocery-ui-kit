@@ -1,5 +1,5 @@
 import {Pressable, StyleSheet, Text} from "react-native";
-import {GlobalStyles} from "../constants/styles";
+import {COLORS, FONT_FAMILY, GlobalStyles} from "../constants";
 
 function Segment({item, isActive, onPress, transparent}) {
     return (
@@ -36,13 +36,13 @@ const styles = StyleSheet.create({
     },
     transparentItem: {
         borderWidth: 1,
-        borderColor: GlobalStyles.colors.white,
+        borderColor: COLORS.white,
         paddingHorizontal: GlobalStyles.spacing.s,
         paddingVertical: GlobalStyles.spacing.xs,
     },
     active: {
-        backgroundColor: GlobalStyles.colors.white,
-        borderColor: GlobalStyles.colors.grey5,
+        backgroundColor: COLORS.white,
+        borderColor: COLORS.grey5,
         borderWidth: 0.5,
         borderStyle: "solid",
         // shadow for android
@@ -50,20 +50,23 @@ const styles = StyleSheet.create({
     },
     transparentItemActive: {
         borderWidth: 1,
-        borderColor: GlobalStyles.colors.primaryGreen,
+        borderColor: COLORS.primaryGreen,
         elevation: 0
     },
     text: {
-        ...GlobalStyles.fontSemiBold,
+        fontFamily: FONT_FAMILY.semiBold,
+        fontWeight: "600",
         fontSize: GlobalStyles.fontSize.subhead,
-        color: GlobalStyles.colors.black
+        color: COLORS.black
     },
     transparentItemText: {
-        ...GlobalStyles.fontRegular,
+        fontFamily: FONT_FAMILY.regular,
+        fontWeight: "400",
         fontSize: GlobalStyles.fontSize.headline,
     },
     transparentActiveItemText: {
-        ...GlobalStyles.fontSemiBold,
-        color: GlobalStyles.colors.primaryGreen,
+        fontFamily: FONT_FAMILY.semiBold,
+        fontWeight: "600",
+        color: COLORS.primaryGreen,
     }
 })

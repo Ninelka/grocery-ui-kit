@@ -1,7 +1,7 @@
 import {StyleSheet, View} from "react-native";
-import {GlobalStyles} from "../constants/styles";
 import Toggle from "../components/Toggle";
 import {useState} from "react";
+import {COLORS, GlobalStyles} from "../constants";
 
 function ToggleScreen() {
     const [isEnabled, setIsEnabled] = useState(false);
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
         paddingVertical: GlobalStyles.spacing.s,
         paddingHorizontal: GlobalStyles.spacing.m,
         marginVertical: GlobalStyles.spacing.s,
-        backgroundColor: GlobalStyles.colors.bgPrimary,
+        backgroundColor: COLORS.bgPrimary,
         borderRadius: 16
     }
 })

@@ -1,8 +1,8 @@
 import {SafeAreaView, ScrollView, StyleSheet, View} from "react-native";
-import {GlobalStyles} from "../constants/styles";
 import Search from "../components/Search";
 import Button from "../components/Button";
 import IconButton from "../components/IconButton";
+import {COLORS, FONT_FAMILY, GlobalStyles} from "../constants";
 
 function SearchScreen() {
     return (
@@ -52,7 +52,7 @@ function SearchScreen() {
                                 <View style={{marginLeft: GlobalStyles.spacing.xs}}>
                                     <IconButton
                                         icon="search"
-                                        color={GlobalStyles.colors.white}
+                                        color={COLORS.white}
                                         size="small"
                                         onPress={() => console.log("Icon pressed")}
                                     />
@@ -65,7 +65,7 @@ function SearchScreen() {
                             outerBtn={
                                     <IconButton
                                         icon="notifications-outline"
-                                        color={GlobalStyles.colors.primaryGreen}
+                                        color={COLORS.primaryGreen}
                                         bgColor="transparent"
                                         size="small"
                                         onPress={() => console.log("Icon pressed")}
@@ -94,15 +94,16 @@ const styles = StyleSheet.create({
         width: '90%',
         paddingVertical: GlobalStyles.spacing.s,
         paddingHorizontal: GlobalStyles.spacing.m,
-        backgroundColor: GlobalStyles.colors.bgPrimary,
+        backgroundColor: COLORS.bgPrimary,
         borderRadius: 16
     },
     btn: {
         paddingRight: 0
     },
     btnText: {
-        ...GlobalStyles.fontRegular,
-        color: GlobalStyles.colors.black,
+        fontFamily: FONT_FAMILY.regular,
+        fontWeight: "400",
+        color: COLORS.black,
         marginHorizontal: 0,
     },
 })

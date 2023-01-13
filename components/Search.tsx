@@ -1,7 +1,7 @@
 import {StyleSheet, TextInput, View, ViewStyle} from "react-native";
-import {GlobalStyles} from "../constants/styles";
 import IconButton from "./IconButton";
 import React from "react";
+import {COLORS, FONT_FAMILY, GlobalStyles} from "../constants";
 
 interface ISearch {
     value?: string,
@@ -26,7 +26,7 @@ function Search({value, placeholder, style, iconLeft, iconRight, iconRightPress,
                     <IconButton
                     icon={iconLeft}
                     size="small"
-                    color={GlobalStyles.colors.grey2}
+                    color={COLORS.grey2}
                     bgColor="transparent"
                     />
                 )}
@@ -35,14 +35,14 @@ function Search({value, placeholder, style, iconLeft, iconRight, iconRightPress,
                     autoCorrect={false}
                     style={styles.input}
                     placeholder={placeholder}
-                    placeholderTextColor={GlobalStyles.colors.grey2}
-                    cursorColor={GlobalStyles.colors.primaryGreen}
+                    placeholderTextColor={COLORS.grey2}
+                    cursorColor={COLORS.primaryGreen}
                 />
                 {iconRight && (
                     <IconButton
                         icon={iconRight}
                         size="small"
-                        color={GlobalStyles.colors.grey2}
+                        color={COLORS.grey2}
                         bgColor="transparent"
                         onPress={iconRightPress}
                     />
@@ -68,14 +68,14 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         alignItems: "center",
         borderRadius: 8,
-        backgroundColor: GlobalStyles.colors.fillsTertiary,
+        backgroundColor: COLORS.fillsTertiary,
         paddingHorizontal: GlobalStyles.spacing.xs,
     },
     input: {
-        // TODO: fix style type and uncomment it
-        // ...GlobalStyles.fontRegular,
+        fontFamily: FONT_FAMILY.regular,
+        fontWeight: "400",
         flex: 1,
-        color: GlobalStyles.colors.labelsPrimary,
+        color: COLORS.labelsPrimary,
         fontSize: GlobalStyles.fontSize.headline,
         paddingVertical: GlobalStyles.spacing.xs
     },

@@ -1,5 +1,5 @@
 import {ScrollView, StyleSheet, View} from "react-native";
-import {GlobalStyles} from "../constants/styles";
+import {GlobalStyles} from "../constants";
 import ProductCard from "../components/card/ProductCard";
 
 const product = {

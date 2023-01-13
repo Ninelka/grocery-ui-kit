@@ -1,10 +1,10 @@
 import {Dimensions, StyleSheet, Text, View} from "react-native";
 import Constants from 'expo-constants';
 import AppIntroSlider from "react-native-app-intro-slider";
-import {GlobalStyles} from "../constants/styles";
 import IntroSlide from "../components/IntroSlide";
 import Button from "../components/Button";
 import {useNavigation} from "@react-navigation/native";
+import {COLORS, GlobalStyles} from "../constants";
 
 const data = [
     {
@@ -71,12 +71,12 @@ const styles = StyleSheet.create({
     dot: {
         width: GlobalStyles.spacing.xs,
         height: GlobalStyles.spacing.xs,
-        backgroundColor: GlobalStyles.colors.fillsPrimary
+        backgroundColor: COLORS.fillsPrimary
     },
     activeDot: {
         width: 40,
         height: GlobalStyles.spacing.xs,
-        backgroundColor: GlobalStyles.colors.primaryGreen
+        backgroundColor: COLORS.primaryGreen
     },
     nextBtn: {
         width: '100%',

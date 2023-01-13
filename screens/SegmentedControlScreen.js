@@ -1,7 +1,7 @@
 import SegmentedControl from "../components/SegmentedControl";
 import {useState} from "react";
 import {SafeAreaView, StyleSheet, Text, View} from "react-native";
-import {GlobalStyles} from "../constants/styles";
+import {COLORS, GlobalStyles} from "../constants";
 
 const segmentsData = [
     "Browse",
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
         paddingVertical: GlobalStyles.spacing.s,
         paddingHorizontal: GlobalStyles.spacing.m,
         marginVertical: GlobalStyles.spacing.xs,
-        backgroundColor: GlobalStyles.colors.bgPrimary,
+        backgroundColor: COLORS.bgPrimary,
         borderRadius: 16,
         margin: GlobalStyles.spacing.xs
     },

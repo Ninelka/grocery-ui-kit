@@ -1,6 +1,6 @@
 import {Pressable, StyleSheet, Text, ViewStyle} from "react-native";
 import {Ionicons} from "@expo/vector-icons";
-import {GlobalStyles} from "../constants/styles";
+import {COLORS, FONT_FAMILY, GlobalStyles} from "../constants";
 
 interface IFilterBtn {
     onPress?: () => void,
@@ -28,10 +28,10 @@ const styles = StyleSheet.create({
         paddingHorizontal: GlobalStyles.spacing.m
     },
     text: {
-        // TODO: fix style type and uncomment it
-        // ...GlobalStyles.fontBold,
+        fontFamily: FONT_FAMILY.bold,
+        fontWeight: "700",
         fontSize: GlobalStyles.fontSize.callout,
-        color: GlobalStyles.colors.labelsPrimary,
+        color: COLORS.labelsPrimary,
         marginLeft: GlobalStyles.spacing.xs
     },
     pressed: {

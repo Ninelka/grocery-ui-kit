@@ -12,7 +12,6 @@ import TypographyScreen from "./screens/TypographyScreen";
 import ToggleScreen from "./screens/ToggleScreen";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import {Ionicons} from "@expo/vector-icons";
-import {GlobalStyles} from "./constants/styles";
 import BottomTabsScreen from "./screens/BottomTabsScreen";
 import SegmentedControlScreen from "./screens/SegmentedControlScreen";
 import SearchScreen from "./screens/SearchScreen";
@@ -21,6 +20,7 @@ import CalendarScreen from "./screens/CalendarScreen";
 import IntroSliderScreen from "./screens/IntroSliderScreen";
 import ProductCardScreen from "./screens/ProductCardScreen";
 import FloatingCardScreen from "./screens/FloatingCardScreen";
+import {COLORS} from "./constants";
 
 
 const Drawer = createDrawerNavigator();
@@ -35,7 +35,7 @@ function MyTabs() {
                 component={BottomTabsScreen}
                 options={{
                     tabBarIcon: ({size, color}) => <Ionicons name="home" size={size} color={color} />,
-                    tabBarActiveTintColor: GlobalStyles.colors.primaryGreen
+                    tabBarActiveTintColor: COLORS.primaryGreen
                 }}
             />
             <BottomTabs.Screen
@@ -43,7 +43,7 @@ function MyTabs() {
                 component={BottomTabsScreen}
                 options={{
                     tabBarIcon: ({size, color}) => <Ionicons name="home" size={size} color={color} />,
-                    tabBarActiveTintColor: GlobalStyles.colors.primaryGreen
+                    tabBarActiveTintColor: COLORS.primaryGreen
                 }}
             />
             <BottomTabs.Screen
@@ -51,7 +51,7 @@ function MyTabs() {
                 component={BottomTabsScreen}
                 options={{
                     tabBarIcon: ({size, color}) => <Ionicons name="home" size={size} color={color} />,
-                    tabBarActiveTintColor: GlobalStyles.colors.primaryGreen
+                    tabBarActiveTintColor: COLORS.primaryGreen
                 }}
             />
         </BottomTabs.Navigator>

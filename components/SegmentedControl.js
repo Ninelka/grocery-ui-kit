@@ -1,6 +1,6 @@
 import {FlatList, StyleSheet, View} from "react-native";
-import {GlobalStyles} from "../constants/styles";
 import Segment from "./Segment";
+import {COLORS} from "../constants";
 
 function SegmentedControl({segments, activeItem, onPress, transparent}) {
     const separator = () => {
@@ -32,7 +32,7 @@ export default SegmentedControl;
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: GlobalStyles.colors.fillsTertiary,
+        backgroundColor: COLORS.fillsTertiary,
         paddingVertical: 2,
         paddingHorizontal: 3,
         borderRadius: 8,
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     separator: {
         margin: 6,
         width: 1,
-        backgroundColor: GlobalStyles.colors.separatorOpaque
+        backgroundColor: COLORS.separatorOpaque
     },
     transparentSeparator: {
         marginHorizontal: 4,

@@ -1,8 +1,8 @@
 import {StyleSheet, Text, TextInput, View} from "react-native";
-import {GlobalStyles} from "../constants/styles";
 import {useState} from "react";
 import Button from "./Button";
 import IconButton from "./IconButton";
+import {COLORS, FONT_FAMILY, GlobalStyles} from "../constants";
 
 function Input({
     label,
@@ -44,9 +44,9 @@ function Input({
                     style={inputStyle}
                     placeholder={placeholder}
                     keyboardType={keyboardType}
-                    placeholderTextColor={GlobalStyles.colors.labelsTertiary}
+                    placeholderTextColor={COLORS.labelsTertiary}
                     secureTextEntry={secureText}
-                    cursorColor={GlobalStyles.colors.primaryGreen}
+                    cursorColor={COLORS.primaryGreen}
                     onFocus={() => setIsFocused(true)}
                     onBlur={() => setIsFocused(false)}
                 />
@@ -57,7 +57,7 @@ function Input({
                     <IconButton
                         icon={iconRight}
                         size="small"
-                        color={GlobalStyles.colors.grey1}
+                        color={COLORS.grey1}
                         bgColor="transparent"
                         onPress={iconRightPress}
                     />
@@ -80,35 +80,37 @@ const styles = StyleSheet.create({
         alignItems: "center",
         borderWidth: 1,
         borderStyle: "solid",
-        borderColor: GlobalStyles.colors.separatorNotOpaque,
+        borderColor: COLORS.separatorNotOpaque,
         borderRadius: 8,
         backgroundColor: "transparent",
         paddingHorizontal: GlobalStyles.spacing.s,
     },
     label: {
-        ...GlobalStyles.fontRegular,
+        fontFamily: FONT_FAMILY.regular,
+        fontWeight: "400",
         fontSize: GlobalStyles.fontSize.headline,
-        color: GlobalStyles.colors.labelsSecondary,
+        color: COLORS.labelsSecondary,
         marginBottom: GlobalStyles.spacing.xs
     },
     input: {
-        ...GlobalStyles.fontRegular,
+        ontFamily: FONT_FAMILY.regular,
+        fontWeight: "400",
         flex: 1,
-        color: GlobalStyles.colors.labelsPrimary,
+        color: COLORS.labelsPrimary,
         fontSize: GlobalStyles.fontSize.headline,
         paddingVertical: GlobalStyles.spacing.s
     },
     invalidLabel: {
-        color: GlobalStyles.colors.primaryOrange
+        color: COLORS.primaryOrange
     },
     invalidInput: {
-        borderColor: GlobalStyles.colors.primaryOrange
+        borderColor: COLORS.primaryOrange
     },
     focusedInput: {
-        borderColor: GlobalStyles.colors.primaryGreen
+        borderColor: COLORS.primaryGreen
     },
     inputBtnText: {
-        color: GlobalStyles.colors.primaryGreen,
+        color: COLORS.primaryGreen,
         marginHorizontal: 0
     },
     noPaddingRight: {

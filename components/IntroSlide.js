@@ -1,5 +1,5 @@
 import {Text, Image, StyleSheet, View} from "react-native";
-import {GlobalStyles} from "../constants/styles";
+import {COLORS, FONT_FAMILY, GlobalStyles} from "../constants";
 
 function IntroSlide({item}) {
     return (
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
         height: '60%',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: GlobalStyles.colors.secondaryGreen,
+        backgroundColor: COLORS.secondaryGreen,
     },
     image: {
         width: 300,
@@ -32,15 +32,17 @@ const styles = StyleSheet.create({
         marginBottom: GlobalStyles.spacing.s,
     },
     text: {
-        ...GlobalStyles.fontSemiBold,
+        fontFamily: FONT_FAMILY.semiBold,
+        fontWeight: "600",
         fontSize: GlobalStyles.fontSize.subhead,
-        color: GlobalStyles.colors.grey2,
+        color: COLORS.grey2,
         textAlign: 'center',
     },
     title: {
-        ...GlobalStyles.fontBold,
+        fontFamily: FONT_FAMILY.bold,
+        fontWeight: "700",
         fontSize: GlobalStyles.fontSize.title1,
-        color: GlobalStyles.colors.black,
+        color: COLORS.black,
         textAlign: 'center',
         marginBottom: GlobalStyles.spacing.s,
         marginTop: GlobalStyles.spacing.l

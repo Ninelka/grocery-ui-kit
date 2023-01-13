@@ -1,13 +1,13 @@
 import {StyleSheet, View} from "react-native";
-import {GlobalStyles} from "../constants/styles";
 import {Calendar} from 'react-native-calendars';
 import {FontAwesome} from "@expo/vector-icons";
 import {useState} from "react";
+import {COLORS, GlobalStyles} from "../constants";
 
 const customTheme = {
-    selectedDayBackgroundColor: GlobalStyles.colors.secondaryGreen,
-    selectedDayTextColor: GlobalStyles.colors.primaryGreen,
-    todayTextColor: GlobalStyles.colors.primaryGreen,
+    selectedDayBackgroundColor: COLORS.secondaryGreen,
+    selectedDayTextColor: COLORS.primaryGreen,
+    todayTextColor: COLORS.primaryGreen,
     textDayFontFamily: 'nunito-regular',
     textMonthFontFamily: 'nunito-semibold',
     textDayHeaderFontFamily: 'nunito-regular',
@@ -21,7 +21,7 @@ const customTheme = {
         dayHeader: {
             textTransform: "uppercase",
             fontSize: 13,
-            color: GlobalStyles.colors.grey2,
+            color: COLORS.grey2,
             marginBottom: GlobalStyles.spacing.s
         }
     }
@@ -34,7 +34,7 @@ function CalendarScreen() {
         <View style={styles.container}>
             <View style={styles.item}>
                 <Calendar
-                    renderArrow={direction => <FontAwesome color={GlobalStyles.colors.primaryGreen} size={20} name={`angle-${direction}`}/>}
+                    renderArrow={direction => <FontAwesome color={COLORS.primaryGreen} size={20} name={`angle-${direction}`}/>}
                     theme={customTheme}
                     markedDates={{
                         [selectedDay]: { selected: true },
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
         width: '90%',
         paddingVertical: GlobalStyles.spacing.s,
         paddingHorizontal: GlobalStyles.spacing.m,
-        backgroundColor: GlobalStyles.colors.bgPrimary,
+        backgroundColor: COLORS.bgPrimary,
         borderRadius: 16
     }
 })

@@ -1,9 +1,9 @@
 import {SafeAreaView, StyleSheet, View} from "react-native";
-import {GlobalStyles} from "../constants/styles";
 import FloatingCard from "../components/card/FloatingCard";
 import FilterBtn from "../components/FilterBtn";
 import TotalCard from "../components/card/TotalCard";
 import {useMemo} from "react";
+import {COLORS, GlobalStyles} from "../constants";
 
 const orderList = ['Dragong Fruit', 'Orange', 'Apple', 'Banana', 'Avocado', 'Dragong Fruit', 'Orange', 'Apple', 'Banana', 'Avocado'];
 
@@ -63,6 +63,6 @@ const styles = StyleSheet.create({
         width: 172,
     },
     summaryCard: {
-        backgroundColor: GlobalStyles.colors.primaryGreen,
+        backgroundColor: COLORS.primaryGreen,
     }
 })

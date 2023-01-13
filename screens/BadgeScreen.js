@@ -1,6 +1,6 @@
 import {StyleSheet, Text, View} from "react-native";
-import {GlobalStyles} from "../constants/styles";
 import Badge from "../components/Badge";
+import {COLORS} from "../constants";
 
 function BadgeScreen() {
     return (
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
         width: '90%',
         paddingVertical: 16,
         paddingHorizontal: 24,
-        backgroundColor: GlobalStyles.colors.bgPrimary,
+        backgroundColor: COLORS.bgPrimary,
         borderRadius: 16
     }
 })

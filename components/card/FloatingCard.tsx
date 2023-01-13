@@ -1,6 +1,6 @@
 import {StyleSheet, View, ViewStyle} from "react-native";
-import {GlobalStyles} from "../../constants/styles";
 import React from "react";
+import {COLORS, GlobalStyles} from "../../constants";
 
 interface IFloatingCard {
     children: React.ReactNode,
@@ -21,7 +21,7 @@ export default FloatingCard;
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: GlobalStyles.colors.bgPrimary,
+        backgroundColor: COLORS.bgPrimary,
         // shadow for android
         elevation: 16,
         // shadow for ios

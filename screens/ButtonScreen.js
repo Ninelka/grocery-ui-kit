@@ -1,6 +1,6 @@
 import Button from "../components/Button";
 import {ScrollView, StyleSheet, Text, View} from "react-native";
-import {GlobalStyles} from "../constants/styles";
+import {COLORS, GlobalStyles} from "../constants";
 
 function ButtonScreen() {
 
@@ -348,14 +348,13 @@ const styles = StyleSheet.create({
         marginBottom: GlobalStyles.spacing.xs
     },
     item: {
-        fontSize: GlobalStyles.fontSize.callout,
         width: '100%',
         paddingVertical: GlobalStyles.spacing.s,
         paddingHorizontal: GlobalStyles.spacing.m,
         marginVertical: GlobalStyles.spacing.xs,
         flexDirection: "column-reverse",
         justifyContent: "space-between",
-        backgroundColor: GlobalStyles.colors.bgPrimary,
+        backgroundColor: COLORS.bgPrimary,
         borderRadius: 16
     }
 })

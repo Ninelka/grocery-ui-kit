@@ -1,5 +1,5 @@
 import {View, Switch, Text, StyleSheet} from "react-native";
-import {GlobalStyles} from "../constants/styles";
+import {COLORS, FONT_FAMILY, GlobalStyles} from "../constants";
 
 interface IToggle {
     label: string,
@@ -13,9 +13,9 @@ function Toggle({label, value, disabled, onValueChange}: IToggle) {
             <Text style={styles.label} onPress={!disabled ? onValueChange : null}>{label}</Text>
             <Switch
                 onValueChange={onValueChange}
-                ios_backgroundColor={GlobalStyles.colors.fillsTertiary}
-                trackColor={{true: GlobalStyles.colors.green, false: GlobalStyles.colors.fillsTertiary}}
-                thumbColor={GlobalStyles.colors.white}
+                ios_backgroundColor={COLORS.fillsTertiary}
+                trackColor={{true: COLORS.green, false: COLORS.fillsTertiary}}
+                thumbColor={COLORS.white}
                 value={value}
                 disabled={disabled}
             />
@@ -32,8 +32,8 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     label: {
-        // TODO: fix style type and uncomment it
-        // ...GlobalStyles.fontRegular,
+        fontFamily: FONT_FAMILY.regular,
+        fontWeight: "400",
         flex: 1,
         fontSize: GlobalStyles.fontSize.headline
     },

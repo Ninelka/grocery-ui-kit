@@ -1,6 +1,6 @@
 import {Image, Pressable, StyleSheet, Text, View} from "react-native";
 import {useMemo} from "react";
-import {GlobalStyles} from "../../constants/styles";
+import {COLORS, FONT_FAMILY, GlobalStyles} from "../../constants";
 import Badge from "../Badge";
 import IconButton from "../IconButton";
 
@@ -86,7 +86,7 @@ function ProductCard({onPress, type = 'vertical', title, unit, amount, amountWit
                                 )}
                                 <Text style={[styles.amountText, {marginLeft: discount > 0 ? GlobalStyles.spacing.xs : 0}]}>{discount > 0 ? `$${amountWithDiscount.toFixed()}` : `$${amount.toFixed()}`}</Text>
                             </View>
-                            <IconButton size="small" color={GlobalStyles.colors.white} icon="add"/>
+                            <IconButton size="small" color={COLORS.white} icon="add"/>
                         </View>
                     </View>
                 )
@@ -107,13 +107,13 @@ export default ProductCard;
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: GlobalStyles.colors.bgPrimary,
+        backgroundColor: COLORS.bgPrimary,
         padding: GlobalStyles.spacing.xs,
         borderRadius: GlobalStyles.spacing.xs
     },
     imageWrapper: {
         borderRadius: GlobalStyles.spacing.xs,
-        backgroundColor: GlobalStyles.colors.grey5
+        backgroundColor: COLORS.grey5
     },
     badge: {
         flexDirection: "row",
@@ -122,15 +122,17 @@ const styles = StyleSheet.create({
         marginBottom: GlobalStyles.spacing.xs,
     },
     title: {
-        ...GlobalStyles.fontBold,
+        fontFamily: FONT_FAMILY.bold,
+        fontWeight: "700",
         fontSize: GlobalStyles.fontSize.callout,
-        color: GlobalStyles.colors.labelsPrimary,
+        color: COLORS.labelsPrimary,
         marginBottom: GlobalStyles.spacing.xs
     },
     unit: {
-        ...GlobalStyles.fontRegular,
+        fontFamily: FONT_FAMILY.regular,
+        fontWeight: "400",
         fontSize: GlobalStyles.fontSize.footnote,
-        color: GlobalStyles.colors.labelsSecondary,
+        color: COLORS.labelsSecondary,
         marginBottom: 4,
     },
     amountBlockCol: {
@@ -142,16 +144,18 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     discount: {
-        ...GlobalStyles.fontRegular,
+        fontFamily: FONT_FAMILY.regular,
+        fontWeight: "400",
         fontSize: GlobalStyles.fontSize.footnote,
-        color: GlobalStyles.colors.labelsSecondary,
+        color: COLORS.labelsSecondary,
         textDecorationLine: 'line-through',
         textAlign: "right"
     },
     amountText: {
-        ...GlobalStyles.fontBold,
+        fontFamily: FONT_FAMILY.bold,
+        fontWeight: "700",
         fontSize: GlobalStyles.fontSize.title1,
-        color: GlobalStyles.colors.labelsPrimary,
+        color: COLORS.labelsPrimary,
     },
     pressed: {
         opacity: 0.75

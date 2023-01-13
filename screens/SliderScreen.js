@@ -1,6 +1,6 @@
-import {GlobalStyles} from "../constants/styles";
 import {Platform, SafeAreaView, StyleSheet, View} from "react-native";
 import Slider from '@react-native-community/slider';
+import {COLORS, GlobalStyles} from "../constants";
 
 function SliderScreen() {
     return (
@@ -10,9 +10,9 @@ function SliderScreen() {
                         value={1}
                         minimumValue={0}
                         maximumValue={2}
-                        maximumTrackTintColor={GlobalStyles.colors.fillsSecondary}
-                        minimumTrackTintColor={GlobalStyles.colors.primaryGreen}
-                        thumbTintColor={Platform.OS === 'android' && GlobalStyles.colors.secondaryGreen}
+                        maximumTrackTintColor={COLORS.fillsSecondary}
+                        minimumTrackTintColor={COLORS.primaryGreen}
+                        thumbTintColor={Platform.OS === 'android' && COLORS.secondaryGreen}
                     />
                 </View>
             </SafeAreaView>
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
         width: '90%',
         paddingVertical: GlobalStyles.spacing.s,
         paddingHorizontal: GlobalStyles.spacing.m,
-        backgroundColor: GlobalStyles.colors.bgPrimary,
+        backgroundColor: COLORS.bgPrimary,
         borderRadius: 16
     }
 })

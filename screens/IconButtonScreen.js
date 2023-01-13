@@ -1,6 +1,6 @@
 import IconButton from "../components/IconButton";
-import {GlobalStyles} from "../constants/styles";
 import {ScrollView, StyleSheet, Text, View} from "react-native";
+import {COLORS, GlobalStyles} from "../constants";
 
 function IconButtonScreen() {
     return (
@@ -12,8 +12,8 @@ function IconButtonScreen() {
                 <View style={styles.iconItem}>
                     <IconButton
                         icon="location-outline"
-                        color={GlobalStyles.colors.white}
-                        bgColor={GlobalStyles.colors.primaryGreen}
+                        color={COLORS.white}
+                        bgColor={COLORS.primaryGreen}
                         size="large"
                         onPress={() => console.log('Pressed!')}
                     />
@@ -25,8 +25,8 @@ function IconButtonScreen() {
                 <View style={styles.iconItem}>
                     <IconButton
                         icon="location-outline"
-                        color={GlobalStyles.colors.white}
-                        bgColor={GlobalStyles.colors.primaryGreen}
+                        color={COLORS.white}
+                        bgColor={COLORS.primaryGreen}
                         size="medium"
                         onPress={() => console.log('Pressed!')}
                     />
@@ -38,8 +38,8 @@ function IconButtonScreen() {
                 <View style={styles.iconItem}>
                     <IconButton
                         icon="location-outline"
-                        color={GlobalStyles.colors.white}
-                        bgColor={GlobalStyles.colors.primaryGreen}
+                        color={COLORS.white}
+                        bgColor={COLORS.primaryGreen}
                         size="small"
                         onPress={() => console.log('Pressed!')}
                     />
@@ -51,8 +51,8 @@ function IconButtonScreen() {
                 <View style={styles.iconItem}>
                     <IconButton
                         icon="location-outline"
-                        color={GlobalStyles.colors.white}
-                        bgColor={GlobalStyles.colors.primaryGreen}
+                        color={COLORS.white}
+                        bgColor={COLORS.primaryGreen}
                         size="large"
                         type="ellipse"
                         onPress={() => console.log('Pressed!')}
@@ -65,8 +65,8 @@ function IconButtonScreen() {
                 <View style={styles.iconItem}>
                     <IconButton
                         icon="location-outline"
-                        color={GlobalStyles.colors.white}
-                        bgColor={GlobalStyles.colors.primaryGreen}
+                        color={COLORS.white}
+                        bgColor={COLORS.primaryGreen}
                         size="medium"
                         type="ellipse"
                         onPress={() => console.log('Pressed!')}
@@ -79,8 +79,8 @@ function IconButtonScreen() {
                 <View style={styles.iconItem}>
                     <IconButton
                         icon="location-outline"
-                        color={GlobalStyles.colors.white}
-                        bgColor={GlobalStyles.colors.primaryGreen}
+                        color={COLORS.white}
+                        bgColor={COLORS.primaryGreen}
                         size="small"
                         type="ellipse"
                         onPress={() => console.log('Pressed!')}
@@ -103,10 +103,10 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     label: {
+        fontSize: GlobalStyles.fontSize.callout,
         marginBottom: GlobalStyles.spacing.xs
     },
     iconItem: {
-        fontSize: GlobalStyles.fontSize.callout,
         width: '80%',
         paddingVertical: GlobalStyles.spacing.s,
         paddingHorizontal: GlobalStyles.spacing.l,
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
-        backgroundColor: GlobalStyles.colors.bgPrimary,
+        backgroundColor: COLORS.bgPrimary,
         borderRadius: 16
     }
 })
