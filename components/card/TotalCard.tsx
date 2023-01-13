@@ -1,8 +1,17 @@
 import {Pressable, StyleSheet, Text, View} from "react-native";
-import {GlobalStyles} from "../../constants/styles";
 import Button from "../Button";
+import {COLORS, FONT_FAMILY, GlobalStyles} from "../../constants";
 
-function TotalCard({onPress, isSummary, counter = 0, totalAmount, summaryText, summaryAmount}) {
+interface ITotalCard {
+    counter?: number,
+    onPress?: () => void,
+    isSummary?: boolean,
+    totalAmount?: number,
+    summaryText?: string,
+    summaryAmount?: number
+}
+
+function TotalCard({onPress, isSummary, counter = 0, totalAmount, summaryText, summaryAmount}: ITotalCard) {
     return (
         <Pressable onPress={onPress} style={({pressed}) => [styles.container, pressed && styles.pressed]}>
             <View style={{flex: 1}}>
@@ -33,24 +42,28 @@ const styles = StyleSheet.create({
         padding: GlobalStyles.spacing.s,
     },
     text: {
-        ...GlobalStyles.fontBold,
+        fontFamily: FONT_FAMILY.bold,
+        fontWeight: "700",
         fontSize: GlobalStyles.fontSize.callout,
     },
     title: {
-        ...GlobalStyles.fontBold,
+        fontFamily: FONT_FAMILY.bold,
+        fontWeight: "700",
         fontSize: GlobalStyles.fontSize.callout,
-        color: GlobalStyles.colors.labelsQuarternary,
+        color: COLORS.labelsQuarternary,
         marginBottom: GlobalStyles.spacing.xs
     },
     summaryText: {
-        ...GlobalStyles.fontRegular,
+        fontFamily: FONT_FAMILY.regular,
+        fontWeight: "400",
         fontSize: GlobalStyles.fontSize.footnote,
-        color: GlobalStyles.colors.labelsQuarternary,
+        color: COLORS.labelsQuarternary,
     },
     amount: {
-        ...GlobalStyles.fontBold,
+        fontFamily: FONT_FAMILY.bold,
+        fontWeight: "700",
         fontSize: GlobalStyles.fontSize.title1,
-        color: GlobalStyles.colors.labelsQuarternary,
+        color: COLORS.labelsQuarternary,
     },
     pressed: {
         opacity: 0.75
