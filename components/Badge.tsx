@@ -2,7 +2,7 @@ import {StyleSheet, Text, View, ViewStyle} from "react-native";
 import {COLORS, GlobalStyles} from "../constants";
 
 interface IBadge {
-    counter: number,
+    counter: number | string,
     size?: string,
     style?: ViewStyle
 }
