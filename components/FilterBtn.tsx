@@ -1,8 +1,13 @@
-import {Pressable, StyleSheet, Text} from "react-native";
+import {Pressable, StyleSheet, Text, ViewStyle} from "react-native";
 import {Ionicons} from "@expo/vector-icons";
 import {GlobalStyles} from "../constants/styles";
 
-function FilterBtn({onPress, style}) {
+interface IFilterBtn {
+    onPress?: () => void,
+    style?: ViewStyle
+}
+
+function FilterBtn({onPress, style}: IFilterBtn) {
     return (
         <Pressable onPress={onPress} style={({pressed}) => [styles.container, pressed && styles.pressed, style]}>
             <Ionicons name="options-outline" size={24}/>
@@ -23,7 +28,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: GlobalStyles.spacing.m
     },
     text: {
-        ...GlobalStyles.fontBold,
+        // TODO: fix style type and uncomment it
+        // ...GlobalStyles.fontBold,
         fontSize: GlobalStyles.fontSize.callout,
         color: GlobalStyles.colors.labelsPrimary,
         marginLeft: GlobalStyles.spacing.xs
