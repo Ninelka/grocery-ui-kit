@@ -23,11 +23,11 @@ function TotalCard({onPress, isSummary, counter = 0, totalAmount, summaryText, s
                 ) : (
                     <>
                         <Text style={styles.text}>{`Total (${counter})`}</Text>
-                        <Text style={styles.text}>{totalAmount}</Text>
+                        <Text style={styles.text}>{`$${totalAmount}`}</Text>
                     </>
                 )}
             </View>
-            {isSummary ? <Text style={styles.amount}>{summaryAmount}</Text> :  <Button shape="ellipse">Buy Now</Button>}
+            {isSummary ? <Text style={styles.amount}>{`$${summaryAmount}`}</Text> :  <Button shape="ellipse">Buy Now</Button>}
         </Pressable>
     )
 }

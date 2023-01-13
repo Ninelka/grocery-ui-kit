@@ -32,7 +32,7 @@ function FloatingCardScreen() {
                     <FloatingCard style={styles.summaryCard}>
                         <TotalCard
                             isSummary
-                            summaryAmount="$240"
+                            summaryAmount={240}
                             summaryText={summaryText}
                             counter={orderList.length}
                         />
@@ -40,7 +40,7 @@ function FloatingCardScreen() {
                 </View>
                 <View style={styles.row}>
                     <FloatingCard>
-                        <TotalCard counter={5} totalAmount="$156" />
+                        <TotalCard counter={5} totalAmount={156} />
                     </FloatingCard>
                 </View>
             </View>
