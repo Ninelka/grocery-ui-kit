@@ -1,7 +1,21 @@
-import {Pressable, StyleSheet, Text, View} from "react-native";
-import {GlobalStyles} from "../constants/styles";
+import {Pressable, StyleSheet, Text, TextStyle, View, ViewStyle} from "react-native";
 import {Ionicons} from "@expo/vector-icons";
-import {useMemo} from "react";
+import {ReactNode, useMemo} from "react";
+import {COLORS, FONT_FAMILY, GlobalStyles} from "../constants";
+
+interface IButton {
+    children: ReactNode,
+    iconLeft?: keyof typeof Ionicons.glyphMap,
+    iconRight?: keyof typeof Ionicons.glyphMap,
+    onPress?: () => void,
+    type?: 'primary' | 'secondary' | 'transparent',
+    shape?: 'rectangle' | 'ellipse' | 'rounded',
+    size?: 'large' | 'medium' | 'small',
+    isCentered?: boolean,
+    isDisabled?: boolean,
+    style?: ViewStyle,
+    textStyle?: TextStyle
+}
 
 const defaultButtonStyle = {};
 
@@ -17,7 +31,7 @@ function Button({
     isDisabled,
     style,
     textStyle,
-}) {
+}: IButton) {
     const btnBorderRadius = useMemo(() => {
         switch (shape) {
             case 'ellipse':
@@ -33,32 +47,30 @@ function Button({
         }
     }, [shape]);
 
-    const btnBorderColor = useMemo(() => {
+    const btnBgColor = useMemo(() => {
         switch (type) {
             case 'primary':
                 if (isDisabled) {
                     return {
-                        backgroundColor: GlobalStyles.colors.grey5
+                        backgroundColor: COLORS.grey5
                     }
                 }
                 return {
-                    backgroundColor: GlobalStyles.colors.primaryGreen,
+                    backgroundColor: COLORS.primaryGreen,
                 };
             case 'secondary':
                 if (isDisabled) {
                     return {
                         backgroundColor: 'transparent',
-                        borderColor: GlobalStyles.colors.grey3,
+                        borderColor: COLORS.grey3,
                         borderWidth: 1,
-                        borderStyle: 'solid'
                     }
                 }
 
                 return {
                     backgroundColor: 'transparent',
-                    borderColor: GlobalStyles.colors.primaryGreen,
+                    borderColor: COLORS.primaryGreen,
                     borderWidth: 1,
-                    borderStyle: 'solid'
                 };
             case 'transparent':
                 return {
@@ -86,14 +98,14 @@ function Button({
 
     const iconColor = useMemo(() => {
         if (isDisabled) {
-            return GlobalStyles.colors.disable;
+            return COLORS.disable;
         }
 
         switch (type) {
             case 'primary':
-                return GlobalStyles.colors.white;
+                return COLORS.white;
             case 'secondary':
-                return GlobalStyles.colors.primaryGreen;
+                return COLORS.primaryGreen;
         }
     }, [type, isDisabled]);
 
@@ -101,20 +113,21 @@ function Button({
         return isCentered ? "center" : "space-between"
     }, [isCentered]);
 
-    const buttonStyle = useMemo(() => {
+    const buttonStyle: ViewStyle = useMemo(() => {
         return {
             ...defaultButtonStyle,
             ...btnBorderRadius,
-            ...btnBorderColor,
+            ...btnBgColor,
             ...btnSize,
-            ...GlobalStyles.fontRegular,
+            fontFamily: FONT_FAMILY.regular,
+            fontWeight: "400",
             paddingHorizontal: GlobalStyles.spacing.s,
             flexDirection: "row",
             justifyContent: btnTextAlign,
             alignItems: "center",
             ...style
         };
-    }, [btnBorderRadius, btnBorderColor, btnSize, btnTextAlign, style]);
+    }, [btnBorderRadius, btnBgColor, btnSize, btnTextAlign, style]);
     return (
         <View style={style}>
             <Pressable disabled={isDisabled} onPress={onPress} style={({pressed}) => [pressed && styles.pressed]}>
@@ -143,14 +156,14 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent'
     },
     buttonText: {
-        color: GlobalStyles.colors.white,
+        color: COLORS.white,
         fontSize: GlobalStyles.fontSize.button,
     },
     secondaryText: {
-        color: GlobalStyles.colors.primaryGreen
+        color: COLORS.primaryGreen
     },
     disabledText: {
-        color: GlobalStyles.colors.disable,
+        color: COLORS.disable,
     },
     centeredText: {
         marginHorizontal: GlobalStyles.spacing.s,
