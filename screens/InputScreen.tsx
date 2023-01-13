@@ -38,7 +38,7 @@ function InputScreen() {
                             keyboardType="email-address"
                             secureText={passwordVisibility}
                             iconRight={rightIcon}
-                            iconRightPress={() => handlePasswordVisibility((prevState) => !prevState)}
+                            iconRightPress={handlePasswordVisibility}
                         />
                         <Input
                             label="Promo Code"

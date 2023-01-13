@@ -1,8 +1,9 @@
 import {useState} from "react";
+import {IoniconsType} from "../types/expo-icons";
 
 export const useTogglePasswordVisibility = () => {
     const [passwordVisibility, setPasswordVisibility] = useState(true);
-    const [rightIcon, setRightIcon] = useState('eye-outline');
+    const [rightIcon, setRightIcon] = useState<IoniconsType>('eye-outline');
 
     const handlePasswordVisibility = () => {
         if (rightIcon === 'eye-outline') {
