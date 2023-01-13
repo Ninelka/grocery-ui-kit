@@ -1,8 +1,22 @@
-import {StyleSheet, Text, TextInput, View} from "react-native";
+import {KeyboardType, StyleSheet, Text, TextInput, TextStyle, View} from "react-native";
 import {useState} from "react";
 import Button from "./Button";
 import IconButton from "./IconButton";
 import {COLORS, FONT_FAMILY, GlobalStyles} from "../constants";
+import {Ionicons} from "@expo/vector-icons";
+
+interface IInput {
+    label?: string,
+    value?: string,
+    style?: TextStyle,
+    invalid?: boolean,
+    placeholder?: string,
+    keyboardType?: KeyboardType,
+    onBtnPress?: () => void,
+    iconRight?: keyof typeof Ionicons.glyphMap,
+    iconRightPress?: () => void,
+    secureText?: boolean
+}
 
 function Input({
     label,
@@ -15,18 +29,8 @@ function Input({
     iconRight,
     iconRightPress,
     secureText
-}) {
+}: IInput) {
     const [isFocused, setIsFocused] = useState(false);
-
-    let inputStyle = [styles.input];
-
-    if (invalid) {
-        inputStyle.push(styles.invalidInput)
-    }
-
-    if (isFocused) {
-        inputStyle.push(styles.focusedInput)
-    }
 
     return (
         <View style={[styles.inputContainer, style]}>
@@ -41,7 +45,7 @@ function Input({
                 <TextInput
                     value={value}
                     autoCorrect={false}
-                    style={inputStyle}
+                    style={[styles.input, invalid && styles.invalidInput, isFocused && styles.focusedInput]}
                     placeholder={placeholder}
                     keyboardType={keyboardType}
                     placeholderTextColor={COLORS.labelsTertiary}
