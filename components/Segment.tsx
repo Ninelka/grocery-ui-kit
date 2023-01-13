@@ -1,7 +1,14 @@
 import {Pressable, StyleSheet, Text} from "react-native";
 import {COLORS, FONT_FAMILY, GlobalStyles} from "../constants";
 
-function Segment({item, isActive, onPress, transparent}) {
+interface ISegment {
+    item: any,
+    isActive?: boolean,
+    onPress?: (item: any) => void,
+    transparent?: boolean
+}
+
+function Segment({item, isActive, onPress, transparent}: ISegment) {
     return (
         <Pressable
             key={item}
