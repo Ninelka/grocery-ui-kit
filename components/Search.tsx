@@ -2,13 +2,14 @@ import {StyleSheet, TextInput, View, ViewStyle} from "react-native";
 import IconButton from "./IconButton";
 import React from "react";
 import {COLORS, FONT_FAMILY, GlobalStyles} from "../constants";
+import {Ionicons} from "@expo/vector-icons";
 
 interface ISearch {
     value?: string,
     placeholder?: string,
     style?: ViewStyle,
-    iconLeft?: React.ReactElement
-    iconRight?: React.ReactElement,
+    iconLeft?: keyof typeof Ionicons.glyphMap,
+    iconRight?: keyof typeof Ionicons.glyphMap,
     iconRightPress?: () => void,
     outerBtn?: React.ReactElement
 }
