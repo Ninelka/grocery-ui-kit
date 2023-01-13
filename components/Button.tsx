@@ -2,11 +2,12 @@ import {Pressable, StyleSheet, Text, TextStyle, View, ViewStyle} from "react-nat
 import {Ionicons} from "@expo/vector-icons";
 import {ReactNode, useMemo} from "react";
 import {COLORS, FONT_FAMILY, GlobalStyles} from "../constants";
+import {IoniconsType} from "../types/expo-icons";
 
 interface IButton {
     children: ReactNode,
-    iconLeft?: keyof typeof Ionicons.glyphMap,
-    iconRight?: keyof typeof Ionicons.glyphMap,
+    iconLeft?: IoniconsType,
+    iconRight?: IoniconsType,
     onPress?: () => void,
     type?: 'primary' | 'secondary' | 'transparent',
     shape?: 'rectangle' | 'ellipse' | 'rounded',

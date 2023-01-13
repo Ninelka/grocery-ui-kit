@@ -3,7 +3,7 @@ import {useState} from "react";
 import Button from "./Button";
 import IconButton from "./IconButton";
 import {COLORS, FONT_FAMILY, GlobalStyles} from "../constants";
-import {Ionicons} from "@expo/vector-icons";
+import {IoniconsType} from "../types/expo-icons";
 
 interface IInput {
     label?: string,
@@ -13,7 +13,7 @@ interface IInput {
     placeholder?: string,
     keyboardType?: KeyboardType,
     onBtnPress?: () => void,
-    iconRight?: keyof typeof Ionicons.glyphMap,
+    iconRight?: IoniconsType,
     iconRightPress?: () => void,
     secureText?: boolean
 }
