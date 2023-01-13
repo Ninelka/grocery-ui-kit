@@ -1,12 +1,19 @@
-import {Dimensions, StyleSheet, Text, View} from "react-native";
+import {Dimensions, ImageSourcePropType, StyleSheet, Text, View} from "react-native";
 import Constants from 'expo-constants';
 import AppIntroSlider from "react-native-app-intro-slider";
 import IntroSlide from "../components/IntroSlide";
 import Button from "../components/Button";
 import {useNavigation} from "@react-navigation/native";
 import {COLORS, GlobalStyles} from "../constants";
+import {DrawerNavigation} from "../types/drawer-navigation";
 
-const data = [
+interface IIntroSlideItem {
+    title: string,
+    text: string,
+    image?: ImageSourcePropType
+}
+
+const data: IIntroSlideItem[] = [
     {
         title: 'Fresh Vegetables',
         text: 'Vegetables that are directly picked by farmers\n and guaranteed quality and freshness',
@@ -25,7 +32,7 @@ const data = [
 ];
 
 function IntroSliderScreen() {
-    const navigation = useNavigation();
+    const navigation = useNavigation<DrawerNavigation>();
     const pressHandler = () => {
         navigation.navigate('Typography');
     };

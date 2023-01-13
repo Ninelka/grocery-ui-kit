@@ -21,9 +21,9 @@ import IntroSliderScreen from "./screens/IntroSliderScreen";
 import ProductCardScreen from "./screens/ProductCardScreen";
 import FloatingCardScreen from "./screens/FloatingCardScreen";
 import {COLORS} from "./constants";
+import {DrawerParamList} from "./types/drawer-param-list";
 
-
-const Drawer = createDrawerNavigator();
+const Drawer = createDrawerNavigator<DrawerParamList>();
 const BottomTabs = createBottomTabNavigator();
 SplashScreen.preventAutoHideAsync();
 
