@@ -57,7 +57,7 @@ function ProductCard({
                 }
             default:
                 return {
-                    width: 152,
+                    width: '100%',
                     height: 131,
                     marginBottom: 4
                 };
