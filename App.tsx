@@ -23,6 +23,7 @@ import FloatingCardScreen from "./screens/FloatingCardScreen";
 import {COLORS} from "./constants";
 import {DrawerParamList} from "./types/drawer-param-list";
 import CardScreen from "./screens/CardScreen";
+import QuantityButtonsScreen from "./screens/QuantityButtonsScreen";
 
 const Drawer = createDrawerNavigator<DrawerParamList>();
 const BottomTabs = createBottomTabNavigator();
@@ -110,6 +111,10 @@ function MyDrawer() {
           <Drawer.Screen
               name="Calendar"
               component={CalendarScreen}
+          />
+          <Drawer.Screen
+              name="Quantity Buttons"
+              component={QuantityButtonsScreen}
           />
           <Drawer.Screen
               name="Cards"

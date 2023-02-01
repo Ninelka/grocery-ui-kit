@@ -13,5 +13,6 @@ export type DrawerParamList = {
     Calendar: undefined,
     "Product Cards": undefined,
     "Floating Cards": undefined,
-    "Cards": undefined
+    "Cards": undefined,
+    "Quantity Buttons": undefined
 }
