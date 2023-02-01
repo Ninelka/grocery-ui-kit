@@ -1,5 +1,5 @@
-import {KeyboardType, StyleSheet, Text, TextInput, TextStyle, View} from "react-native";
-import {useState} from "react";
+import {KeyboardType, StyleSheet, Text, TextInput, TextStyle, View, ViewStyle} from "react-native";
+import {useMemo, useState} from "react";
 import Button from "./Button";
 import IconButton from "./IconButton";
 import {COLORS, FONT_FAMILY, GlobalStyles} from "../constants";
@@ -13,9 +13,13 @@ interface IInput {
     placeholder?: string,
     keyboardType?: KeyboardType,
     onBtnPress?: () => void,
+    onChangeText?: (value) => void,
     iconRight?: IoniconsType,
     iconRightPress?: () => void,
-    secureText?: boolean
+    secureText?: boolean,
+    inputStyle?: TextStyle,
+    inputWrapperStyle?: ViewStyle,
+    size?: 'large' | 'medium' | 'small',
 }
 
 function Input({
@@ -26,11 +30,28 @@ function Input({
     placeholder,
     keyboardType,
     onBtnPress,
+    onChangeText,
     iconRight,
     iconRightPress,
-    secureText
+    secureText,
+    inputStyle,
+    inputWrapperStyle,
+    size
 }: IInput) {
     const [isFocused, setIsFocused] = useState(false);
+
+    const inputHeight = useMemo(() => {
+        switch (size) {
+            case 'large':
+                return {height: 56}
+            case 'medium':
+                return {height: 44};
+            case 'small':
+                return {height: 32};
+            default:
+                return {height: 56};
+        }
+    }, [size]);
 
     return (
         <View style={[styles.inputContainer, style]}>
@@ -39,6 +60,7 @@ function Input({
             )}
             <View style={[
                 styles.inputWrapper,
+                inputWrapperStyle,
                 isFocused && styles.focusedInput,
                 (iconRight || onBtnPress) && styles.noPaddingRight,
                 invalid && styles.invalidInput
@@ -47,7 +69,7 @@ function Input({
                 <TextInput
                     value={value}
                     autoCorrect={false}
-                    style={[styles.input, invalid && styles.invalidInput, isFocused && styles.focusedInput]}
+                    style={[styles.input, inputHeight, inputStyle, invalid && styles.invalidInput, isFocused && styles.focusedInput]}
                     placeholder={placeholder}
                     keyboardType={keyboardType}
                     placeholderTextColor={COLORS.labelsTertiary}
@@ -55,6 +77,7 @@ function Input({
                     cursorColor={COLORS.primaryGreen}
                     onFocus={() => setIsFocused(true)}
                     onBlur={() => setIsFocused(false)}
+                    onChangeText={onChangeText}
                 />
                 {onBtnPress && (
                     <Button onPress={onBtnPress} type="transparent" textStyle={styles.inputBtnText}>APPLY</Button>
@@ -89,6 +112,7 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         backgroundColor: "transparent",
         paddingHorizontal: GlobalStyles.spacing.s,
+        minWidth: GlobalStyles.spacing.l,
     },
     label: {
         fontFamily: FONT_FAMILY.regular,
@@ -100,10 +124,9 @@ const styles = StyleSheet.create({
     input: {
         ontFamily: FONT_FAMILY.regular,
         fontWeight: "400",
-        flex: 1,
         color: COLORS.labelsPrimary,
         fontSize: GlobalStyles.fontSize.headline,
-        paddingVertical: GlobalStyles.spacing.s
+        paddingVertical: 0,
     },
     invalidLabel: {
         color: COLORS.primaryOrange
