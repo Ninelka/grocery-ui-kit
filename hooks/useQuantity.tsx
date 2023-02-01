@@ -12,9 +12,14 @@ export const useQuantity = () => {
         }
     }
 
+    const manualChangeQuantity = (inputValue: number) => {
+        setQuantity(+inputValue);
+    }
+
     return {
         quantity,
         increment,
-        decrement
+        decrement,
+        manualChangeQuantity
     }
 }
