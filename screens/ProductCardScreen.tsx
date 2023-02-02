@@ -38,6 +38,18 @@ function ProductCardScreen() {
                         type="horizontal"
                     />
                 </View>
+                <View style={styles.row}>
+                    <ProductCard {...product} type="horizontal" withQuantity/>
+                </View>
+                <View style={styles.row}>
+                    <ProductCard
+                        {...product}
+                        discount={40}
+                        amountWithDiscount={product.amount - product.amount * 40/100}
+                        type="horizontal"
+                        withQuantity
+                    />
+                </View>
             </View>
         </ScrollView>
     )
