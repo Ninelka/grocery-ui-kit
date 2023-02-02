@@ -3,6 +3,7 @@ import {useMemo} from "react";
 import {COLORS, FONT_FAMILY, GlobalStyles} from "../../constants";
 import Badge from "../Badge";
 import IconButton from "../IconButton";
+import QuantityButtons from "../QuantityButtons";
 
 interface IProductCard {
     title: string,
@@ -12,7 +13,8 @@ interface IProductCard {
     image?: ImageSourcePropType,
     discount?: number,
     onPress?: () => void,
-    type?: 'vertical' | 'horizontal' | 'compact'
+    type?: 'vertical' | 'horizontal' | 'compact',
+    withQuantity?: boolean
 }
 
 function ProductCard({
@@ -23,7 +25,8 @@ function ProductCard({
                          amount,
                          amountWithDiscount,
                          image,
-                         discount
+                         discount,
+                         withQuantity
 }: IProductCard) {
     const cardStyles: ViewStyle = useMemo(() => {
         switch (type) {
@@ -68,7 +71,7 @@ function ProductCard({
         switch (type) {
             case 'compact':
                 return (
-                        <View style={styles.row}>
+                        <View style={[styles.row, {alignItems: "center"}]}>
                             <View style={{flex: 1}}>
                                 <Text style={[styles.title, {marginBottom: 0}]}>{title}</Text>
                             </View>
@@ -77,18 +80,35 @@ function ProductCard({
                 )
             case 'horizontal':
                 return (
-                    <View style={styles.row}>
+                    <View style={[styles.row, withQuantity ? {flexDirection: "column"} : {flexDirection: "row"}]}>
                         <View style={{flex: 1}}>
                             {discount > 0 && <Badge size="small" counter={`Disc ${discount}%`} style={styles.badge}/>}
                             <Text style={styles.title}>{title}</Text>
                             {unit && <Text style={styles.unit}>{unit}</Text>}
                         </View>
-                        <View style={styles.amountBlockCol}>
-                            {discount > 0 && (
-                                <Text style={styles.discount}>{`$${amount.toFixed()}`}</Text>
-                            )}
-                            <Text style={[styles.amountText, {marginLeft: discount > 0 ? GlobalStyles.spacing.xs : 0}]}>{discount > 0 ? `$${amountWithDiscount.toFixed()}` : `$${amount.toFixed()}`}</Text>
-                        </View>
+                        {!withQuantity && (
+                            <View style={styles.amountBlockCol}>
+                                {discount > 0 && (
+                                    <Text style={styles.discount}>{`$${amount.toFixed()}`}</Text>
+                                )}
+                                <Text style={[styles.amountText, {marginLeft: discount > 0 ? GlobalStyles.spacing.xs : 0}]}>{discount > 0 ? `$${amountWithDiscount.toFixed()}` : `$${amount.toFixed()}`}</Text>
+                            </View>
+                        )}
+                        {withQuantity && (
+                            <View style={styles.amountWrapper}>
+                                <View style={styles.amountBlockRow}>
+                                    {discount > 0 && (
+                                        <Text style={styles.discount}>{`$${amount.toFixed()}`}</Text>
+                                    )}
+                                    <Text style={[styles.amountText, {marginLeft: discount > 0 ? GlobalStyles.spacing.xs : 0}]}>{discount > 0 ? `$${amountWithDiscount.toFixed()}` : `$${amount.toFixed()}`}</Text>
+                                </View>
+                                {withQuantity && (
+                                    <View>
+                                        <QuantityButtons/>
+                                    </View>
+                                )}
+                            </View>
+                        )}
                     </View>
                 )
             default:
@@ -99,7 +119,7 @@ function ProductCard({
                             <Text style={styles.title}>{title}</Text>
                             {unit && <Text style={styles.unit}>{unit}</Text>}
                         </View>
-                        <View style={[styles.row, {justifyContent: 'space-between'}]}>
+                        <View style={[styles.row, {justifyContent: 'space-between', alignItems: "center"}]}>
                             <View style={styles.row}>
                                 {discount > 0 && (
                                     <Text style={styles.discount}>{`$${amount.toFixed()}`}</Text>
@@ -111,7 +131,7 @@ function ProductCard({
                     </View>
                 )
         }
-    }, [type, title, discount, unit, amount]);
+    }, [type, title, discount, unit, amount, withQuantity]);
 
     return (
         <View>
@@ -155,13 +175,9 @@ const styles = StyleSheet.create({
         color: COLORS.labelsSecondary,
         marginBottom: 4,
     },
-    amountBlockCol: {
-        alignSelf: "flex-end"
-    },
     row: {
         flex: 1,
         flexDirection: "row",
-        alignItems: "center"
     },
     discount: {
         fontFamily: FONT_FAMILY.regular,
@@ -170,6 +186,18 @@ const styles = StyleSheet.create({
         color: COLORS.labelsSecondary,
         textDecorationLine: 'line-through',
         textAlign: "right"
+    },
+    amountWrapper: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "flex-end"
+    },
+    amountBlockCol: {
+        alignSelf: "flex-end"
+    },
+    amountBlockRow: {
+        alignItems: "flex-start",
+        justifyContent: "flex-end"
     },
     amountText: {
         fontFamily: FONT_FAMILY.bold,
