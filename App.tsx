@@ -23,6 +23,7 @@ import FloatingCardScreen from "./screens/FloatingCardScreen";
 import {COLORS} from "./constants";
 import {DrawerParamList} from "./types/drawer-param-list";
 import CardScreen from "./screens/CardScreen";
+import ReviewScreen from "./screens/ReviewScreen";
 import QuantityButtonsScreen from "./screens/QuantityButtonsScreen";
 
 const Drawer = createDrawerNavigator<DrawerParamList>();
@@ -127,6 +128,10 @@ function MyDrawer() {
           <Drawer.Screen
               name="Floating Cards"
               component={FloatingCardScreen}
+          />
+          <Drawer.Screen
+              name="Review Card"
+              component={ReviewScreen}
           />
       </Drawer.Navigator>
   );
